@@ -2,7 +2,11 @@
 /Dogs/venv
 Glasses/venv
 /One/venv
-/One/one/main_page/static/main_page/img
-/Glasses/glasses/index/static/media/images
-/Dogs/dogs/media/photos/2022
-/Bots/bots/media/photo/2022
+/One/one/main_page/static/
+/One/one/biography/static
+/One/one/news/static
+/Glasses/glasses/index/static
+/Dogs/dogs/media/
+/Dogs/dogs/main/static
+/Bots/bots/media/
+/Bots/bots/main/static
