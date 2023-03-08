@@ -1,0 +1,51 @@
+{% load static %}
+
+<!doctype html>
+    <html>
+    <head>
+
+        <title>{% block title %} Pugsnotdrugs {% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="https://www.pngkit.com/png/full/44-449402_pug-logo-png-transparent-pug-js.png"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'main/style.css' %}">
+    </head>
+    <body>
+      <header>
+        <div class="bej">
+          <a class="logo no-login" href="{% url 'main' %}">Главная</a>
+            {% if request.user.is_authenticated %}
+                <a class="login no-login"href="{% url 'logout' %}">Выйти</a>
+            {% else %}
+                <a class="login no-login"href="{% url 'input' %}">Войти</a>
+            {% endif %}
+         </div>
+      </header>
+        <div class="container widget">
+            <h3 class="widget-title">Меню</h3>
+            <ul class="widget-list">
+                <li id="t1"><a href="">Особенности породы</a></li>
+              <ul>
+                <li id="t2"><a href="">уход</a></li>
+                <li id="t3"><a href="">питание</a></li>
+              </ul>
+                  <li><a href="zavodchiki.html">Питомники</a></li>
+                  <li><a href="foto.html">Фото</a></li>
+                  <li><a href="forum.html">Форум</a></li>
+                  <li><a href="{% url 'news' %}">Новости</a></li>
+                  <li><a href="kontakti.html">Контакты</a></li>
+            </ul>
+        </div>
+        <h1 class="coral" id="hello">
+            {% if gc %}
+                {{ gc }}
+            {% endif %}
+        </h1>
+        {% block osobennosti %}
+        {% endblock %}
+        {% block login %}
+        {% endblock %}
+
+    </body>
+</html>

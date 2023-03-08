@@ -1,0 +1,13 @@
+Login: Leorlik
+Pass: pristxolidc2022
+Emaail: leorl1k@yandex.ru
+.login-form {
+    position: absolute;
+    left: 850px;
+    top: 200px;
+}
+
+.test1 {
+    width: 800px;
+    max-width: 1024px;
+}

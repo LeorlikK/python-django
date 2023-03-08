@@ -1,0 +1,27 @@
+{% extends 'main_page/layout.html' %}
+
+{% block title %}
+    <title>Triss VS Jennifer</title>
+{% endblock %}
+
+{% block body %}
+    <div class="features">
+        <h1> {{ title }}</h1>
+        <p>Когда все загадки вселенной разгаданы, всё непознанное стало постижимым и обыденным, у человечества остался лишь один вопрос...</p>
+        <p>Вам предстоит разобраться в перипетии сложных отношений и найти ответ на него. Помните, что судьба этого мира зависит только от вас!</p>
+        <p id="good">Good luck and Good night!</p>
+        <button class="btn btn-warning" id="yen"> Yennefer of Vengerberg</button>
+        <button class="btn btn-warning" id="triss">Triss Merigold</button>
+        {% for i in array %}
+            {% if i == 'Choose your fate' %}
+                {% filter upper %}
+                    <h1 class="window"> {{ i }} </h1>
+                {% endfilter %}
+            {% endif %}
+        {% endfor %}
+        <h3 id="we">Никак вы бл@#%дь не научитесь...</h3>
+    </div>
+{% include 'main_page/test.html' %}
+{% endblock %}
+
+

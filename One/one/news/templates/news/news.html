@@ -1,0 +1,35 @@
+{% extends 'main_page/layout.html' %}
+
+{% block title %}
+<title>News Page</title>
+{% endblock %}
+
+{% block news_list %}
+<a href="{% url 'create_news' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle">Добавить новость</i></button></li></a>
+{% endblock %}
+
+{% block body %}
+    <div class="features">
+        <h1>{{ news_reg }}</h1>
+        <form method="post" action="{% url 'find_news' %}">
+            {% csrf_token %}<br>
+            <input  type="text" placeholder="{{ not_find.text }}" id="city">
+            <input  type="submit"  name="send" value="Найти">
+        </form>
+
+        {% if news_req %}
+            {% for item in news_req %}
+                <div>
+                    <h3> {{ item.title }}</h3>
+                    <li> {{ item.anons }}</li>
+                    <a href="{% url 'reed_once_news' item.id %}"><button class="btn btn-info">Читать подробнее</button></a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>У вас нет записей!</p>
+        {% endif %}
+        {# Комментарий #}
+        <a href="{% url 'all_news_two' pkk %}"><button class="btn btn-info">Далее</button></a>
+    </div>
+{% include 'main_page/test.html' %}
+{% endblock %}

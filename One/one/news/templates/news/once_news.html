@@ -1,0 +1,16 @@
+{% extends 'main_page/layout.html' %}
+
+{% block title %}
+{{ news_get.title }}
+{% endblock %}
+
+{% block body %}
+    <div class="features">
+        <h1> {{ news_get.title}} </h1>
+        <h3> {{ news_get.anons}} </h3>
+        <p> {{ news_get.full_text}} </p>
+        <a href="{% url 'all_news' %}"><button class="btn btn-info">Вернуться назад</button></a>
+        <a href="{% url 'news_update' news_get.id %}"><button class="btn btn-warning">Редактировать</button></a>
+        <a href="{% url 'news_delete' news_get.id %}"><button class="btn btn-danger">Удалить</button></a>
+    </div>
+{% endblock %}

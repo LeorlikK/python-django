@@ -1,0 +1,18 @@
+{% extends 'main_page/layout.html' %}
+
+{% block title %}
+    <title>Triss VS Jennifer</title>
+{% endblock %}
+
+{% block list %}
+    <ul>
+        <a href="{% url 'yennefer_biography' %}"><li>Yennefer of Vengerberg</li></a>
+        <a href="{% url 'triss_biography' %}"><li>Triss Merigold</li></a>
+    </ul>
+{% endblock %}
+
+{% block body %}
+    <div class="features">
+        <button class="btn btn-warning" id="yen"> Yennefer of Vengerberg</button>
+    </div>
+{% endblock %}

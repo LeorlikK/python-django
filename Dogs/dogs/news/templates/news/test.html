@@ -1,0 +1,17 @@
+{% extends 'main/index.html' %}
+{% block title %} Pugsnotdrugs {% endblock %}
+
+{% block osobennosti %}
+    {% include 'news/test3.html' %}
+    <form method="GET">
+        <input name="s">
+        <button type="submit">Найти</button>
+    </form>
+    {% for item in news %}
+        {{ item }}<hr>
+    {% endfor %}
+
+    {% for p in page_obj.paginator.page_range %}
+        <a href="?page={{ p }}">{{ p }}</a>
+    {% endfor %}
+{% endblock %}

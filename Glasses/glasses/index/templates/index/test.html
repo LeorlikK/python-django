@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    {% for item in data %}
+        {{ item }}
+        {{ item.name }}
+        {{ item.model }}
+        <img src="{{ item.image.url }}" alt="Картинка">
+
+<!--        <img src="http://itd3.mycdn.me/image?id=927372632012&t=20&plc=MOBILE&tkn=*7Fi16SfcebSy_typ7S94L9FNXw8">-->
+    {% endfor %}<hr>
+    {% for item in object_list %}
+        {{ item }}
+    {% endfor %}<hr>
+    {{ data }}
+    {{ object_list }}
+    {{ way }}
+</body>
+</html>

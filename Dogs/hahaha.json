@@ -1,0 +1,1 @@
+{"model": "news.testjson", "pk": 3, "fields": {"name": "RufusTwo", "number": 2, "list_json": {"two": "twotwo"}}}

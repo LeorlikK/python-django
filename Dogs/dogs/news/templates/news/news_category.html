@@ -1,0 +1,32 @@
+{% extends 'main/index.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="login-form card">
+        {{
+        {{ get_category }}
+        {{ list.id_category }}
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <a href="{% url 'news' %}"><h3> Все категории </h3></a>
+                    <span class="badge bg-primary rounded-pill"> {{ list.data|length }} </span>
+                </li>
+            {% for item in list %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <a href="{% url 'news_category' item.pk %}"><h3> {{ item }} </h3></a>
+
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    {% for item in ggg %}
+        {{ item }}<br>
+    {% endfor %}
+</body>
+</html>

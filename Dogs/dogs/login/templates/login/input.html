@@ -1,0 +1,25 @@
+{% extends 'main/index.html' %}
+
+{% block osobennosti %}
+    <div class="login-form card illusion" style="width: 18rem;">
+        <form method="POST">
+            {% csrf_token %}
+            {% if messages %}
+                {% for item in messages %}
+                    {{ item }}
+                {% endfor %}
+            {% endif %}
+
+            {{ form.username.label }}<br>
+            {{ form.username }}<br>
+
+            {{ form.password.label }}<br>
+            {{ form.password }}<br>
+
+            <div class="test1">
+                <a href="{% url 'input' %}"><button type="submit" class="btn btn-outline-secondary">Войти</button></a>
+                <a href="{% url 'registration' %}"><button type="button" class="btn btn-outline-secondary">Регистрация</button></a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

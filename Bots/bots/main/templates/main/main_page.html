@@ -1,0 +1,52 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    {% block main %}
+        <h1>КАКАЯ-ТО ФИГНЯ</h1>
+    {% endblock %}
+
+    <h1>{{ func_name }}</h1>
+    <form action="{% url 'bot_read' %}" method="POST">
+        {% csrf_token %}<br>
+        {% for item in form_in %}
+            {{ item }}
+        {% endfor %}
+        <input placeholder="{{ form_in.input_text }}">
+        <button type="submit">Найти</button>
+    </form>
+
+    {% for item in data %}
+        <h3>{{ item }}</h3>
+        <ul>
+            <li>{{ item.name }}</li>
+            <li>{{ item.state }}</li>
+            <li>{{ item.position }}</li>
+            <li>{{ item.all_res }}</li>
+        </ul>
+    <a href="{% url 'bot_detail' item.id %}"><button>Детальный просмотр</button></a>
+    {% endfor %}
+    <div>
+        <form action="{% url 'bot_add' %}" method="POST">
+            {% csrf_token %}<br>
+            {{ form.as_p }}<br>
+<!--            {{ form.state }}<br>-->
+<!--            {{ form.name }}<br>-->
+<!--            {{ form.position }}<br>-->
+<!--            {{ form.all_res }}<br>-->
+            <button type="submit">Добавить</button>
+        </form>
+    </div>
+
+
+</body>
+</html>

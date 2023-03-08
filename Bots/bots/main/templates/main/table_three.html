@@ -1,0 +1,11 @@
+{% extends 'main/main_page.html' %}
+
+<body>
+    {% block main %} {% block.super %}
+        {% for item in content %}
+            <h1>{{ item.name}} {{ block.super }}</h1>
+            <img src="{{item.eee.url}}">
+        {% endfor %}
+    {% endblock %}
+</body>
+</html>

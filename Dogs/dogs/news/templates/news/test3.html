@@ -1,0 +1,19 @@
+{% load category_tags %}
+{% block sidbar %}
+    <h1>TTT3</h1>
+    {% get_all_category as category %}
+    <div class="login-form card">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="{% url 'news' %}"><h3> Все категории {{ mixin_prop }}{{ test_slug }}</h3></a>
+                            <span class="badge bg-primary rounded-pill"> {{ b|length }} </span>
+                        </li>
+                    {% for item in category %}
+                        {{ item.pk }}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="{% url 'category' item.slug %}"><h3> {{ item }} </h3></a>
+                        </li>
+                    {% endfor %}
+                </ul>
+        </div>
+{% endblock %}

@@ -1,0 +1,121 @@
+body {
+    background-image: url(../img/main.jpg);
+    background-size: 1920px;
+}
+
+aside {
+    float: left;
+    background: #181818;
+    width: 15%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #fff;
+    border-right: 5px solid #4d4d4d;
+    opacity: 0.75;
+}
+
+aside:hover {
+    opacity: 1;
+}
+aside img {
+    width: 200px;
+    height: 200px;
+}
+
+aside .logo {
+    font-size: 40px;
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+    right: -27px;
+    top: -5px;
+}
+
+aside h3 {
+    margin-top: 50px;
+    font-size: 28px;
+}
+
+aside ul{
+    list-style: none
+}
+
+aside ul li {
+    color: #fff;
+    display: block;
+    margin-top: 15px;
+    transition: transform .6s ease;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: #ed5959;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+main .features {
+    float: left;
+    color: #7b7878;
+    margin-top: 75px;
+    text-align: center;
+    width: 75%;
+}
+
+main .features h1 {
+    font-size: 50px;
+    margin-left: -100px
+}
+
+main .features p {
+    max-width: 1600px;
+    margin: 10px;
+    position: relative;
+    left: 30px;
+}
+
+#good {
+    margin-left: -150px
+}
+
+#yen {
+    margin-top: 15px;
+    position: relative;
+    right: 200px;
+    width: 200px;
+}
+
+#triss {
+    margin-top: 15px;
+    position: relative;
+    right: -95px;
+    width: 200px;
+}
+
+#we {
+    margin-top: 575px;
+    margin-right: 100px;
+    color: #8f0c0c
+}
+
+#text-input {
+    margin-left: -90px;
+}
+.features form {
+    margin-left: -100px;
+}
+
+.form-test {
+    margin: 10px;
+    width: 55vh;
+    color: white;
+    border: 2px solid red;
+    border-radius: 1px;
+}
+
+.form-test-two {
+    height: 25vh;
+}
+
+.btn-test {
+    margin-top: 350px;
+}
